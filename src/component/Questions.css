@@ -1,0 +1,193 @@
+#scoreBox {
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  background-color: #4caf4f90;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+span {
+  color: #FFD700;
+}
+
+.mainDiv {
+  display: grid;
+  grid-template-rows: 15vh 65vh 20vh;
+}
+
+input {
+  text-align: center;
+  width: 250px;
+  height: 50px;
+  align-self: center;
+  font-size: 27px;
+  border-radius: 14px;
+  border: 3px solid #5145fb;
+  background: linear-gradient(to right, rgba(19, 237, 244, 0.541), rgba(135, 207, 235, 0.171));
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  font-family: "Chicle", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgba(0, 0, 0, 0.685);
+  letter-spacing: 5px;
+}
+
+input:focus {
+  border-color: rgb(5, 245, 5);
+  animation: pulse 0.6s ease-in-out infinite;
+}
+
+input::placeholder {
+  letter-spacing: 0;
+  text-align: center;
+  font-size: 18px;
+  color: rgba(17, 17, 18, 0.447);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 5px yellow;
+  }
+
+  50% {
+    box-shadow: 0 0 13px yellow;
+  }
+
+  100% {
+    box-shadow: 0 0 5px yellow;
+  }
+}
+
+#QuestionBox {
+
+  font-family: "Rampart One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(0, 0, 0);
+  background-size: 430px 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-size: 2vw;
+}
+
+#hintBox:before,
+#hintBox:after {
+  position: absolute;
+  content: '';
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+#hintBox:before {
+  border-width: 10px 8px 0 8px;
+  border-style: solid;
+  border-color: rgb(46, 46, 46) transparent transparent transparent;
+  top: -15px;
+  transform: translateY(20px);
+}
+
+#hintBox:after {
+  content: attr(hint-notify);
+  background-color: white;
+  width: 100px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  font-family: "Germania One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  color: rgb(11, 11, 11);
+  top: -75px;
+  left: -10px;
+  padding-top: 9px;
+  border-radius: 28px;
+  letter-spacing: 1px;
+  transform: translateY(20px);
+}
+
+#hintBox:hover::before,
+#hintBox:hover::after {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(2deg);
+  }
+
+  50% {
+    transform: rotate(-3deg);
+  }
+
+  70% {
+    transform: rotate(3deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+#hintBox:hover {
+  animation: shake 500ms ease-in-out forwards;
+}
+
+/* media query (mobile) */
+
+@media (max-width: 630px) and (max-height: 1000px) {
+  .mainDiv {
+    width: 405px;
+    height: 100vh;
+    display: grid;
+    overflow: hidden;
+  }
+
+  #QuestionBox_and_input {
+    flex-direction: column;
+  }
+
+  #QuestionBox {
+    width: 320px;
+    background-size: 320px 300px;
+    font-size: 3vh;
+    margin-right: 20px;
+  }
+
+  #scoreBox {
+    margin-bottom: 42px;
+    margin-right: 30px;
+  }
+
+  #hintBox {
+    align-self: start;
+    margin-top: 35px;
+  }
+}
+
+@media (min-width: 631px) and (max-width: 1124px) {
+  .mainDiv {
+    width: 100%;
+  }
+
+  #scoreBox {
+    margin-bottom: 80px;
+  }
+
+  #QuestionBox_and_input {
+    width: 750px;
+  }
+
+  #QuestionBox {
+    width: 350px;
+    font-size: 2vh;
+    background-size: 320px 300px;
+  }
+}
