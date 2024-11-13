@@ -1,5 +1,5 @@
-Riddle Game 🎉
-Welcome to the Riddle Game, a fun and interactive riddle game built with React and styled with modern UI components.
+RiddleRush 🎉
+Welcome to RiddleRush, a fun and interactive riddle game built with React and styled with modern UI components.
 Challenge yourself with a series of riddles, test your wit, and see how many you can solve!
 
 🎯 Features:
