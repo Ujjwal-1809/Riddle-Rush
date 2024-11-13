@@ -12,7 +12,7 @@ export default function Questions(props) {
   const [showWrongAnswerGif, setShowWrongAnswerGif] = useState(false);
 
   const handleSubmit = () => {
-    if (userAnswer.toLowerCase() === props.RiddleAnswer.toLowerCase()) {
+    if (userAnswer.trim().toLowerCase() === props.RiddleAnswer.toLowerCase()) {
       props.onSubmitAudio();
       props.onAnswerCorrect();
       props.scoreCount();
@@ -36,14 +36,14 @@ export default function Questions(props) {
       className="h-screen bg-cover mainDiv grid grid-rows-[15vh_65vh_20vh]"
       style={{ backgroundImage: `url(${bgImage2})` }}
     >
-      <div id="scoreBox" className="h-14 mr-5 mb-5 p-2 pl-4 w-[195px] self-end justify-self-end">
+      <div id="scoreBox" className="cursor-pointer h-14 mr-5 mb-5 p-2 pl-4 w-[195px] self-end justify-self-end">
         Score - <span className='text-yellow-500'>{props.score}</span>
       </div>
 
       <div id="QuestionBox_and_input" className="flex flex-row items-center justify-evenly">
         <div
           id="QuestionBox"
-          className=" font-normal bg-cover bg-no-repeat bg-center text-[2vw] h-[400px] w-[450px] flex items-center pb-28 pl-16 justify-center text-slate-800 p-4"
+          className="cursor-pointer font-normal bg-cover bg-no-repeat bg-center text-[2vw] h-[400px] w-[450px] flex items-center pb-28 pl-16 justify-center text-slate-800 p-4"
           style={{ backgroundImage: `url(${QuesBoxImg})` }}
         >
           {props.RiddleQuestion}
